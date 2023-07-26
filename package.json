@@ -20,5 +20,8 @@
     "jest": "^29.6.1",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "shallow-equal-object": "^1.1.1"
   }
 }
