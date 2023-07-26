@@ -22,6 +22,8 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "shallow-equal-object": "^1.1.1"
+    "@types/uuid": "^9.0.2",
+    "shallow-equal-object": "^1.1.1",
+    "uuid": "^9.0.0"
   }
 }
