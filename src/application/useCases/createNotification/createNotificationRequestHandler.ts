@@ -14,6 +14,9 @@ export default class CreateNotificationRequestHandler implements RequestHandler<
     async handle(request: CreateNotificationRequest): Promise<CreateNotificationResponse> {
         let notification = Notification.create(request.name);
 
+        if (request.hasEmailData())
+            notification.addEmailNotification(request.email.subject, request.email.body);
+
         notification = await this.notificationRepository.create(notification);
 
         return new CreateNotificationResponse();
