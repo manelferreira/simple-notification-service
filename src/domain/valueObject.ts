@@ -4,7 +4,7 @@ export interface ValueObjectProps {
     [index: string]: any;
 }
 
-export abstract class ValueObject {
+export abstract class ValueObject {  
     public equals (vo? : ValueObject) : boolean {
         if (vo == null || vo == undefined) {
             return false;
