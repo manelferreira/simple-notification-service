@@ -5,6 +5,12 @@ describe('Notification entity', () => {
         let notification = Notification.create("notification.name");
         expect(notification.name).toBe("notification.name");
         expect(notification.isEnabled).toBe(true);
-        expect(notification.types.length).toBe(0);
+        expect(notification.typesCount).toBe(0);
+    })
+
+    test('add email notification', () => {
+        let notification = Notification.create("simple.notification");
+        notification.addEmailNotification("email subject", "email body");
+        expect(notification.typesCount).toBe(1);
     })
 })

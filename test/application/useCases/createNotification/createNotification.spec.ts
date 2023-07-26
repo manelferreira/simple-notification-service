@@ -13,6 +13,6 @@ describe('create notification use case', () => {
         var createdNotification = await notificationRepository.findByName("simple.notification");
         expect(createdNotification.name).toBe("simple.notification");
         expect(createdNotification.isEnabled).toBe(true);
-        expect(createdNotification.types.length).toBe(0);
+        expect(createdNotification.typesCount).toBe(0);
     });
 })
