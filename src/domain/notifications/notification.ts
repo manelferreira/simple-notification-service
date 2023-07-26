@@ -24,4 +24,20 @@ export default class Notification {
         let emailNotification = new EmailNotification(subject, body);
         this.types.push(emailNotification);
     }
+
+    public mustBeSentViaEmail() {
+        if (!this.isEnabled)
+            return false;
+
+        const emailNotification = this.getEmailNotification();  
+
+        if (!emailNotification)
+            return false;
+        
+        return emailNotification.isEnabled;
+    }
+
+    public getEmailNotification() : EmailNotification {
+        return this.types.find(x => x instanceof EmailNotification) as EmailNotification;
+    }
 }

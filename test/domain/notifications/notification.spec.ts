@@ -11,6 +11,12 @@ describe('Notification entity', () => {
     test('add email notification', () => {
         let notification = Notification.create("simple.notification");
         notification.addEmailNotification("email subject", "email body");
+        
+        const emailNotification = notification.getEmailNotification();
+
         expect(notification.typesCount).toBe(1);
+        expect(emailNotification.subject).toBe("email subject");
+        expect(emailNotification.body).toBe("email body");
+        expect(notification.mustBeSentViaEmail()).toBe(true);
     })
 })
