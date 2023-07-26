@@ -6,7 +6,7 @@
 /** @type {import('jest').Config} */
 const config = {
   roots: [
-    "<rootDir>/src"
+    "<rootDir>/test"
   ],
   clearMocks: true,
   collectCoverage: true,
