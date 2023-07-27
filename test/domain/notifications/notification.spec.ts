@@ -19,4 +19,10 @@ describe('Notification entity', () => {
         expect(emailNotification.body).toBe("email body");
         expect(notification.mustBeSentViaEmail()).toBe(true);
     })
+
+    test('fails to add email notification when type is already set', () => {
+        let notification = Notification.create("simple.notification");
+        notification.addEmailNotification("email subject", "email body");
+        expect(() => notification.addEmailNotification("another subject", "another body")).toThrowError("Email type is already set");
+    })
 })
