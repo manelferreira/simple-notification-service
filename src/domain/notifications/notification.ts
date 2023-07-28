@@ -20,6 +20,10 @@ export default class Notification {
         return new Notification(name, true, []);
     }
 
+    public disable() {
+        this.isEnabled = false;
+    }
+
     public addEmailNotification(subject: string, body: string) {
         if (this.hasEmailType())
             throw new Error("Email type is already set");
@@ -47,5 +51,13 @@ export default class Notification {
 
     public getEmailNotification() : EmailNotification {
         return this.types.find(x => x instanceof EmailNotification) as EmailNotification;
+    }
+
+    public disableEmail() {
+        if (!this.hasEmailType())
+            return;
+
+        const emailNotification = this.getEmailNotification();
+        emailNotification.disable();
     }
 }

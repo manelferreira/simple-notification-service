@@ -1,6 +1,7 @@
 import CreateUserRequest from "../../../../src/application/useCases/createUser/createUserRequest";
 import CreateUserRequestHandler from "../../../../src/application/useCases/createUser/createUserRequestHandler";
-import InMemoryUserRepository from "../../mocks/repositories/inMemoryUserRepository";
+import InMemoryUserRepository from "../../../mocks/repositories/inMemoryUserRepository";
+
 
 describe ("Create user use case", () => {
     test("creates a user and returns its id", async () => {

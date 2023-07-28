@@ -1,6 +1,7 @@
-import Notification from "../../../../src/domain/notifications/notification";
-import NotificationRepository from "../../../../src/domain/notifications/notificationRepository";
+
 import { v4 as uuidv4 } from 'uuid';
+import NotificationRepository from '../../../src/domain/notifications/notificationRepository';
+import Notification from '../../../src/domain/notifications/notification';
 
 export default class InMemoryNotificationRepository implements NotificationRepository {
     private notifications : Map<string, Notification>;

@@ -10,4 +10,8 @@ export default class EmailNotification implements NotificationType {
         this.body = body;
         this.isEnabled = isEnabled;
     }
+
+    public disable() {
+        this.isEnabled = false;
+    }
 }

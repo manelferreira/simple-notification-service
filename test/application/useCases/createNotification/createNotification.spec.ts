@@ -1,6 +1,7 @@
 import CreateNotificationRequest from "../../../../src/application/useCases/createNotification/createNotificationRequest";
 import CreateNotificationRequestHandler from "../../../../src/application/useCases/createNotification/createNotificationRequestHandler";
-import InMemoryNotificationRepository from "../../mocks/repositories/inMemoryNotificationRepository"
+import InMemoryNotificationRepository from "../../../mocks/repositories/inMemoryNotificationRepository";
+
 
 describe('create notification use case', () => {
     test('creates a notification', async () => {
