@@ -1,5 +1,5 @@
 export default interface Task {
-    type: string;
+    name: string;
     parameters: {
         [prop: string] : any;
     }

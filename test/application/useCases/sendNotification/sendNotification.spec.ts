@@ -28,7 +28,7 @@ describe ('Send notification use case', () => {
 
         expect(taskEnqueuer.size()).toBe(1);
         let task = taskEnqueuer.dequeueAs<EmailNotificationTask>();
-        expect(task.type).toBe("EmailNotificationTask");
+        expect(task.name).toBe("SendEmailNotification");
         expect(task.parameters.emailSubject).toBe("subject");
         expect(task.parameters.emailBody).toBe("body");
         expect(task.parameters.notifiableEmail).toBe("jc@mk.com");

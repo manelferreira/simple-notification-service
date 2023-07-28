@@ -1,7 +1,7 @@
 import Task from "../../../../../infra/queues/task";
 
 export default class EmailNotificationTask implements Task {
-    type: string;
+    name: string;
     parameters: { 
         emailSubject: string;
         emailBody: string;
@@ -9,7 +9,7 @@ export default class EmailNotificationTask implements Task {
     };
 
     constructor (emailSubject: string, emailBody: string, notifiableEmail: string) {
-        this.type = "EmailNotificationTask";
+        this.name = "SendEmailNotification";
         this.parameters = {
             emailSubject: emailSubject,
             emailBody: emailBody,
